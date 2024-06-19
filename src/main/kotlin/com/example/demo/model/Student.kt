@@ -5,7 +5,7 @@ import jakarta.persistence.*
 import java.util.*
 
 @Entity(name = "student")
-class Student(
+data class Student(
     @Id val id: UUID,
 
     @Column

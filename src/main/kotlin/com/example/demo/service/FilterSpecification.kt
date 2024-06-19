@@ -33,7 +33,6 @@ class FilterSpecificationImpl<T> : FilterSpecification<T> {
                         val split = searchFiler.value.split(",").map { it.trim() }.toList()
                         root.get<String>(searchFiler.column).`in`(split)
                     }
-
                     Operator.GREATER_THAN -> builder.greaterThan(root.get(searchFiler.column), searchFiler.value)
                     Operator.LESS_THAN -> builder.lessThan(root.get(searchFiler.column), searchFiler.value)
                     Operator.BETWEEN -> {

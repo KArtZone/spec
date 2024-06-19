@@ -9,7 +9,7 @@ import jakarta.persistence.ManyToOne
 import java.util.*
 
 @Entity(name = "subject")
-class Subject(
+data class Subject(
     @Id val id: UUID,
 
     val name: String,

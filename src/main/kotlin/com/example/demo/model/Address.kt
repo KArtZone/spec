@@ -6,7 +6,7 @@ import jakarta.persistence.Id
 import java.util.*
 
 @Entity(name = "address")
-class Address(
+data class Address(
     @Id val id: UUID,
 
     @Column
