@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+  demo-db:
+    image: postgres
+    container_name: demo-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: demo_db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - demo-db-data:/var/lib/postgres
+    networks:
+      - demo-network
+    command: postgres -c timescaledb.license=apache
+
+volumes:
+  demo-db-data:
+
+networks:
+  demo-network:
+    name: demo-network
